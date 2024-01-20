@@ -3,10 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Clock</title>
-    
+    <title>Chronomundo</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body id="body">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <p id="navbar_title">C H R O N O M U N D O</p>
+        </div>
+    </nav>
+
+    <!-- CLOCK -->
+    <div id="clock_content">
+
+        <!-- LOCALE CLOCK -->
+        <div class="clock">
+            <div class="clock_container">
+                <p id="currentDoW">Monday</p>
+            </div>
+            <div class="clock_container">
+                <p id="currentTime">00:00:00 AM</p>
+            </div>
+            <div class="clock_container">
+                <p id ="currentDate">Date</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TOOL SELECTOR -->
+    <div class="tool_selector">
+        <div class="ts_container">
+            <img src="./res/images/alarm.png" id="icons">
+        </div>
+        <div class="ts_container">
+            <img src="./res/images/time.png" id="icons">
+        </div>
+        <div class="ts_container">
+            <img src="./res/images/world.png" id="icons">
+        </div>
+            
+    </div>
+
+    <div class="tool_content">
+       
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+
+    </div>
     
+    <!-- JAVASCRIPT -->
+    <script src="app.js" type="module"></script> 
+   
+
 </body>
 </html>

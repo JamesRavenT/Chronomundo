@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Palatino', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: sticky;
+    background: rgba(17, 17, 23, 0.1);
+    top: 0;
+    z-index: 999;
+}
+
+.navbar_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    
+}
+
+#navbar_title {
+    color: #ffff;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+}
+
+/* CLOCK */
+.clock {
+    width: 100%;
+    height:500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#currentDoW {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Verdana';
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 100px;
+    align-items: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+
+}
+
+#currentTime {
+    color: #ffffff;
+    font-size: 100px;
+    font-family: 'Verdana';
+    display: flex;
+    margin: 0 auto;
+    padding: 0 auto;
+    align-items: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    
+}
+
+#currentDate {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Verdana';
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 100px;
+    align-items: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    
+}
+
+/* TOOL */
+.tool_selector {
+    display: flex;
+}
+
+.ts_container {
+    padding: 50px;
+}
+
+#icons {
+    width: 0px;
+}
+
+.tool_content {
+    display: block;
+    height: 1000px;
+    margin: 25px 50px;
+    border-radius: 25px;
+    background-color: #ffff;
+}
