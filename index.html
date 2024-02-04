@@ -6,7 +6,7 @@
     <title>Chronomundo</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body id="body">
+<body class="body">
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -20,6 +20,7 @@
 
         <!-- LOCALE CLOCK -->
         <div class="clock">
+
             <div class="clock_container">
                 <p id="currentDoW">Monday</p>
             </div>
@@ -35,20 +36,68 @@
 
     <!-- TOOL SELECTOR -->
     <div class="tool_selector">
-        <div class="ts_container">
-            <img src="./res/images/alarm.png" id="icons">
-        </div>
-        <div class="ts_container">
-            <img src="./res/images/time.png" id="icons">
-        </div>
-        <div class="ts_container">
-            <img src="./res/images/world.png" id="icons">
-        </div>
+
+        <button class="container" id="alarmBtn">
+            <img src="./res/images/alarm.png" class="icons" >
+        </button>
+        <div class="divider"><p>&nbsp;</p></div>
+        <button class="container" id="wclockBtn">
+            <img src="./res/images/world.png" class="icons" >
+        </button>
+        <div class="divider"><p>&nbsp;</p></div>
+        <button class="container" id="comparatorBtn">
+            <img src="./res/images/zone.png" class="icons" >
+        </button>
             
     </div>
 
-    <div class="tool_content">
-       
+    <!-- TOOL SLIDESHOW -->
+    <div class="tool_container">
+        <div class="tool_carousel">
+            <div class="tool_slider">
+                <!-- ALARM -->
+                <section>
+                    <div class="tool_content">
+                        <div class="alarm_header">
+                            <div class="alarm_text">
+                                <p id="tool_headerTxt">A L A R M</p>
+                            </div>
+
+                            <div class="alarm_divider"></div>
+    
+                            <button id="alarm_AddBtn">
+                                <img src="./res/images/add.png" class="addBtn" >
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- WCLOCK -->
+                <section>
+                    <div class="wclock_container">
+                        <div class="tool_content">
+                            <div class="alarm_header">
+                                <div class="alarm_text">
+                                    <p id="tool_headerTxt">W O R L D  C L O C K</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- COMPARATOR -->
+                <section>
+                    <div class="comparator_container">
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div class="popup_SetAlarm">
+        <div class="overlay"></div>
+        <div class="setAlarmContainer">
+    </div>                  
     </div>
 
 
@@ -60,6 +109,5 @@
     <!-- JAVASCRIPT -->
     <script src="app.js" type="module"></script> 
    
-
 </body>
 </html>
