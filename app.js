@@ -119,7 +119,7 @@ function init_AlarmToolFunctionalities(){
         if((name == null || name == '') || (hour == null || hour == '') || (min == null || min =='') || meridiem == 'AM/PM') {
             alert("Please fill in the blanks");
         } else {
-            let order = convertHourstToMin(hour, min);
+            let order = convertHourstToMin(hour, min, meridiem);
             let check = checkIfAlarmAlreadyExists(order);
             if(check == false) {
                 const alarm = new Alarm(name, hour, min, meridiem, order);
@@ -133,12 +133,12 @@ function init_AlarmToolFunctionalities(){
         
     });
 
-    function convertHourstToMin(hour, min) {
+    function convertHourstToMin(hour, min, meridiem) {
         var a = hour * 60;
         var b = a * 60;
         var c = min * 60;
         var d = b + c;
-        return d;
+        return (meridiem == 'AM') ? d : d + 43200;
     }
 
     function checkIfAlarmAlreadyExists(order) {
@@ -158,16 +158,19 @@ function init_AlarmToolFunctionalities(){
 }
 
 function retrieveAlarmsOnDatabase() {
-    console.log(listOfUserSavedAlarms.length);
+    console.log("HAHHAH" + listOfUserSavedAlarms.length);
     if(listOfUserSavedAlarms.length != 0) {
         while (listOfUserSavedAlarms.length > 0) {
             listOfUserSavedAlarms.pop();
         } 
+        console.log("HAHHAH" + listOfUserSavedAlarms.length);
         for(let i = 0 ; i < localStorage.length ; i++) {
             var key = localStorage.key(i);
-            var alarm = JSON.parse(localStorage.getItem(key.value));
+            var alarm = JSON.parse(localStorage.getItem(key));
             listOfUserSavedAlarms.push(alarm);
         }
+        displayAlarms();
+        console.log("HAHHAH" + listOfUserSavedAlarms.length);
     } else {
         for(let i = 0 ; i < localStorage.length ; i++) {
             var key = localStorage.key(i);
@@ -183,17 +186,53 @@ function retrieveAlarmsOnDatabase() {
   }
 
   function displayAlarms() {
-
     for(let i = 0 ; i < listOfUserSavedAlarms.length ; i++) {
-        // console.log(listOfUserSavedAlarms);
-        // var alarmObj = listOfUserSavedAlarms[i];
-        // console.log(alarmObj);
-        // var alarmItem = JSON.parse(alarmObj);
-        // console.log(alarmItem);
-          const li = document.createElement('li');
-          li.innerHTML = `
-              <h1>${i}</h1>
-          `;
-          listOfAlarms.appendChild(li);
+        var alarm = listOfUserSavedAlarms[i];
+        var name = alarm._name;
+        var hour = alarm._hour;
+        var min = (alarm._minute.length > 1) ? alarm._minute : '0' + alarm._minute;
+        var meridiem = alarm._meridiem;
+        const li = document.createElement('li');
+        li.innerHTML = `
+                <div style="
+                    display: flex;
+                    align-items: center;
+                justify-content: center; 
+                    ">
+                    <div style="
+                        display: block;
+                        width: 100%;
+                        ">
+                        <p style="
+                            font-size: 4vw;
+                            ">
+                            ${name}
+                        </p>
+                        <p style="
+                            font-size: 4vw;
+                            ">
+                            ${hour} : ${min} ${meridiem}
+                        </p>
+                    </div>
+                    <img src="./res/images/edit.png" style="
+                        height: auto;
+                        width: 4vw;
+                        margin: 0.5em;
+                        display: flex;
+                        align-items: center; 
+                        ">
+                    <img src="./res/images/delete.png" style="
+                        height: auto;
+                        width: 4vw;
+                        margin: 0.5em;
+                        display: flex;
+                        align-items: center; 
+                        ">
+                    
+                
+                </div>
+                
+            `;
+        listOfAlarms.appendChild(li);
       };
   }
