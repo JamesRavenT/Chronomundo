@@ -10,71 +10,56 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="navbar_container">
-            <p id="navbar_title">C H R O N O M U N D O</p>
+        <div class="container">
+            <p class="label">C H R O N O M U N D O</p>
         </div>
     </nav>
 
     <!-- CLOCK -->
-    <div id="clock_content">
-
-        <!-- LOCALE CLOCK -->
-        <div class="clock">
-
-            <div class="clock_container">
+    <div class="clock">
+        <div class="container">
                 <p id="currentDoW">Monday</p>
-            </div>
-            <div class="clock_container">
                 <p id="currentTime">00:00:00 AM</p>
-            </div>
-            <div class="clock_container">
                 <p id ="currentDate">Date</p>
-            </div>
         </div>
-
     </div>
-
     <!-- TOOL SELECTOR -->
-    <div class="tool_selector">
-
-        <button class="container" id="alarmBtn">
-            <img src="./res/images/alarm.png" class="icons" >
-        </button>
-        <div class="divider"><p>&nbsp;</p></div>
-        <button class="container" id="wclockBtn">
-            <img src="./res/images/world.png" class="icons" >
-        </button>
-        <div class="divider"><p>&nbsp;</p></div>
-        <button class="container" id="comparatorBtn">
-            <img src="./res/images/zone.png" class="icons" >
-        </button>
-            
+    <div class="tools">
+            <button id="alarmBtn">
+                <img src="./res/images/alarm.png" class="icons" >
+            </button>
+            <div class="divider"><p>&nbsp;</p></div>
+            <button id="wclockBtn">
+                <img src="./res/images/world.png" class="icons" >
+            </button>
+            <div class="divider"><p>&nbsp;</p></div>
+            <button id="comparatorBtn">
+                <img src="./res/images/zone.png" class="icons" >
+            </button>
     </div>
 
     <!-- TOOL SLIDESHOW -->
-    <div class="tool_container">
-        <div class="tool_carousel">
-            <div class="tool_slider">
+    <div class="slideshow">
+        <div class="carousel">
+            <div class="slider">
                 <!-- ALARM -->
                 <section>
-                    <div class="tool_content">
-                        <div class="alarm_header">
-                            <div class="alarm_text">
+                    <div class="content">
+                        <div class="header">
+                            <div class="text">
                                 <p id="tool_headerTxt">A L A R M</p>
                             </div>
-
-                            <div class="alarm_divider"></div>
-    
-                            <button id="alarm_AddBtn">
+                            <button id="alarm_CreateBtn">
                                 <img src="./res/images/add.png" class="addBtn" >
                             </button>
                         </div>
+                        <ul id="alarm_list"></ul>
                     </div>
                 </section>
                 <!-- WCLOCK -->
                 <section>
                     <div class="wclock_container">
-                        <div class="tool_content">
+                        <div class="content">
                             <div class="alarm_header">
                                 <div class="alarm_text">
                                     <p id="tool_headerTxt">W O R L D  C L O C K</p>
@@ -86,7 +71,6 @@
                 <!-- COMPARATOR -->
                 <section>
                     <div class="comparator_container">
-
                     </div>
                 </section>
             </div>
@@ -96,10 +80,33 @@
     <!-- MODALS -->
     <div class="popup_SetAlarm">
         <div class="overlay"></div>
-        <div class="setAlarmContainer">
-    </div>                  
+        <div class="container">
+            <div class="title">
+                <p>C R E A T E&nbsp;&nbsp;A L A R M </p>
+            </div>
+            <div class="form">
+                <label id="setAlarmName">
+                    N A M E  : &nbsp; &nbsp;
+                    <input id="alarmNameInput" type="text" maxlength="20">
+                </label>
+            </div>
+            <div class="form">
+                <label id="setAlarmTime">
+                     T I M E  &nbsp;&nbsp;: &nbsp; &nbsp;
+                    <input id="alarmTimeInputHour" type="number" maxlength="2" min="1" max="12"> :
+                    <input id="alarmTimeInputMinute" type="number" maxlength="2" min="00" max="59">
+                    <select id="alarmTimeInputMeridiem">
+                        <option value="AM/PM" selected hidden>AM/PM</option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </label>
+            </div>
+            <div class="btn_container">
+                <button id="confirmSetAlarmBtn">Set</button>
+            </div>
+        </div>                  
     </div>
-
 
     <!-- FOOTER -->
     <div class="footer">
