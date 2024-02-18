@@ -1,0 +1,19 @@
+@import url('./res/layouts/navbar-style.css');
+@import url('./res/layouts/clock-style.css');
+@import url('./res/layouts/tools-style.css');
+@import url('./res/layouts/alarm-style.css');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Palatino', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.body {
+    display: block;
+    flex-direction: column;
+}
+
+
+

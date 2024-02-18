@@ -1,0 +1,73 @@
+/* TOOL BUTTONS*/
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 2em;
+}
+
+.tools button {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 1em;
+}
+
+.tools .divider {
+    background-color: #ffffff;
+    margin: 0 20px;
+    width: 2px;
+    height: 5rem;
+}
+
+.tools .icons {
+    width: 15vw;
+    display: flex;
+    align-items: center;
+}
+
+/* TOOl CONTENT SLIDER */
+
+.slideshow {
+    width: 90%;
+    margin: 3em auto;
+}
+
+.slideshow .carousel {
+    height: 65vh;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.slideshow .slider {
+    height: 100%;
+    display: flex;
+    width: 300%;
+    border: #2b2b2b;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.slideshow .slider section {
+    flex-basis: 100%;
+    display: flex;
+}
+
+.slideshow .content{
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.slideshow .content .header {
+    display: flex;
+    padding: 0.5em;
+    border-bottom: 1px solid #2b2b2b;
+    align-items: center;
+}
+
+#tool_headerTxt {
+    color: #2b2b2b;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    font-size: 4vw;
+}
