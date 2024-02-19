@@ -4,5 +4,4 @@ import { init_Tools } from './lib/functionalities/tools/_selector.js';
 
 init_NavigationBar();
 init_Clock();
-init_Tools();
-
+init_Tools();   

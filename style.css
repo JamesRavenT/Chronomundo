@@ -2,6 +2,10 @@
 @import url('./res/layouts/clock-style.css');
 @import url('./res/layouts/tools-style.css');
 @import url('./res/layouts/alarm-style.css');
+@import url('./res/layouts/alarm-list-style.css');
+@import url('./res/layouts/modals-setalarm-style.css');
+@import url('./res/layouts/modals-style.css');
+
 * {
     box-sizing: border-box;
     margin: 0;

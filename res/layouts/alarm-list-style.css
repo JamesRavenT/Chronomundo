@@ -1,0 +1,41 @@
+ul {
+    height: 100%;
+    display: block;
+    list-style: none;
+    overflow-y: scroll;
+}
+
+li {
+    margin: 0.5em;
+    padding: 1em;
+    display: block;
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.item_alarm {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.item_alarm .container {
+    display: block;
+    width: 100%;
+}
+
+.item_alarm .container #name {
+    font-size: 4vw;
+}
+
+.item_alarm .container #time {
+    font-size: 4vw;
+}
+
+.item_alarm .button {
+    height: auto;
+    width: 4vw;
+    margin: 0.5em;
+    display: flex;
+    align-items: center; 
+}
+
